@@ -7,11 +7,6 @@ body {
   min-height: 100vh;
 }
 
-/*p {
-  line-height: 1.6;
-  margin-bottom: 1em;
-  1em
-}*/
 p {
     display: block;
     margin-block-start: 1em;
@@ -64,6 +59,7 @@ header, footer {
 }
 
 .container {
+  flex-grow: 1; 
   display: flex;
   flex-wrap: nowrap;
   background-color: #f9f9f9;
@@ -158,8 +154,6 @@ header, footer {
   margin: 0; /* Убираем отступы */
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -209,14 +203,12 @@ header, footer {
 
 }
 
-
-
 footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 20px 10px;
-  position: relative;
+  margin-top: auto; /* Это поднимет футер внизу страницы */
 }
 
 footer .social-icons {
@@ -283,4 +275,25 @@ header {
   height: auto; /* Сохраняет пропорции изображения */
 }
 
+/* Для страницы Datenschutzerklärung */
+#privacy-policy {
+  text-align: left;
+}
+
+#privacy-policy h1, 
+#privacy-policy h2, 
+#privacy-policy h3, 
+#privacy-policy p, 
+#privacy-policy ul {
+  text-align: left;
+}
+
+.privacy-link {
+  color: #ffd700; /* Цвет ссылки */
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+.privacy-link:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
 
