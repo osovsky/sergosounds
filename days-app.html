@@ -42,10 +42,20 @@
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Ошибка');
 
-        out.innerHTML = `<div class="result">Прошло <span class="highlight">${data.days}</span> дней</div>`;
+        const days = Math.abs(data.days);
+        const text = data.days >= 0 ? 'Прошло' : 'Осталось';
+        const word =
+          days === 1
+            ? 'день'
+            : (days % 10 >= 2 && days % 10 <= 4 && (days % 100 < 10 || days % 100 >= 20)
+                ? 'дня'
+                : 'дней');
+
+        out.innerHTML = `<div class="result">${text} <span class="highlight">${days}</span> ${word}</div>`;
       } catch (err) {
         out.innerHTML = `<div class="result error">Ошибка: ${err.message}</div>`;
       }
+
     });
   </script>
 </body>
